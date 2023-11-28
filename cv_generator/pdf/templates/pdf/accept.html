@@ -14,48 +14,48 @@
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+                    <input type="text" class="form-control" required id="name" name="name" aria-describedby="nameHelp">
                     <div id="nameHelp" class="form-text">Name of the candidate whose cv needs to be built.</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" required id="email" name="email">
                 </div>
 
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone">
+                    <input type="text" class="form-control" required id="phone" name="phone">
                 </div>
 
                 <div class="mb-3">
                     <label for="summary" class="form-label">About You</label>
-                    <textarea class="form-control" id="summary" name="summary"></textarea>
+                    <textarea class="form-control" required id="summary" name="summary"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="degree" class="form-label">Degree(s)</label>
-                    <input type="text" class="form-control" id="degree" name="degree">
+                    <input type="text" class="form-control" required id="degree" name="degree">
                 </div>
 
                 <div class="mb-3">
                     <label for="school" class="form-label">School</label>
-                    <input type="text" class="form-control" id="school" name="school">
+                    <input type="text" class="form-control" required id="school" name="school">
                 </div>
 
                 <div class="mb-3">
                     <label for="university" class="form-label">University</label>
-                    <input type="text" class="form-control" id="university" name="university">
+                    <input type="text" class="form-control" required id="university" name="university">
                 </div>
 
                 <div class="mb-3">
                     <label for="previous_work" class="form-label">Work Experience</label>
-                    <textarea class="form-control" id="previous_work" name="previous_work"></textarea>
+                    <textarea class="form-control" required id="previous_work" name="previous_work"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="skills" class="form-label">Skills</label>
-                    <textarea class="form-control" id="skills" name="skills"></textarea>
+                    <textarea class="form-control" required id="skills" name="skills"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
