@@ -1,7 +1,13 @@
 from django.shortcuts import redirect, render
-
+import pdfkit
+from django.http import HttpResponse
+from django.template import loader
 from .models import Profile
+# import io
 
+# pdfkit configuration
+config = pdfkit.configuration(
+    wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
 
 # Create your views here.
 
@@ -23,5 +29,16 @@ def accept_views(request):
 
 def resume(request, id):
     user_profile = Profile.objects.get(id=id)
+    template = loader.get_template('pdf/resume.html')
+    html = template.render({'user_profile': user_profile})
+    options = {
+        "page-size": "Letter",
+        "encoding": "UTF-8",
+        "enable-local-file-access": None,
+    }
+    pdf = pdfkit.from_string(html, configuration=config, options=options)
 
-    return render(request, "pdf/resume.html", {'user_profile': user_profile})
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="resume.pdf"'
+
+    return response
