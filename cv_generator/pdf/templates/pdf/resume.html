@@ -1,28 +1,38 @@
-{% extends "pdf/base.html" %}
-<!-- Nothing here -->
-{% block head %}
-<title>Resume Template</title>
-{% endblock head %}
-<!-- Nothing here -->
-{% block body %}
-<h2>{{user_profile.name }}</h2>
-<h2>{{user_profile.email }}</h2>
-<h2>{{user_profile.phone }}</h2>
-<hr />
-<br />
-<p>Summary</p>
-<p>{{ user_profile.summary }}</p>
-<hr />
-<p>Skills</p>
-<p>{{ user_profile.skills }}</p>
-<hr />
-<p>Education</p>
-<ul>
-  <li>Schooling: {{user_profile.school}}</li>
-  <li>{{ user_profile.degree }} from {{user_profile.university}}</li>
-</ul>
-<hr />
-<p>Experience</p>
-<p>{{ user_profile.previous_work }}</p>
+<!DOCTYPE html>
+<html lang="en">
 
-{% endblock body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        body {
+            font-family: "Times New Roman", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>{{user_profile.name }}</h2>
+    <h2>{{user_profile.email }}</h2>
+    <h2>{{user_profile.phone }}</h2>
+    <hr />
+    <br />
+    <p>Summary</p>
+    <p>{{ user_profile.summary }}</p>
+    <hr />
+    <p>Skills</p>
+    <p>{{ user_profile.skills }}</p>
+    <hr />
+    <p>Education</p>
+    <ul>
+        <li>Schooling: {{user_profile.school}}</li>
+        <li>{{ user_profile.degree }} from {{user_profile.university}}</li>
+    </ul>
+    <hr />
+    <p>Experience</p>
+    <p>{{ user_profile.previous_work }}</p>
+
+</body>
+
+</html>

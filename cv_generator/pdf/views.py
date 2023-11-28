@@ -34,7 +34,7 @@ def resume(request, id):
     options = {
         "page-size": "Letter",
         "encoding": "UTF-8",
-        "enable-local-file-access": None,
+        "zoom": "1.5",
     }
     pdf = pdfkit.from_string(html, configuration=config, options=options)
 
